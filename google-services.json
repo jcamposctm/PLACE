@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "907967397259",
+    "firebase_url": "https://place-69976.firebaseio.com",
+    "project_id": "place-69976",
+    "storage_bucket": "place-69976.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907967397259:android:e7703377091ccfcf",
+        "android_client_info": {
+          "package_name": "com.uqroo.place"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907967397259-amr9gmn3rjpsak0blh7fd0148c8a37d9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUFn_-_mbiVuUaDgaK1hefYiddiQjsb5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907967397259-amr9gmn3rjpsak0blh7fd0148c8a37d9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle="menu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Inicio
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="crearPaciente()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-searchbar placeholder="Buscar por nombre de Paciente" [(ngModel)]="myInput" (ionInput)="onInput($event)" (ionCancel)="onCancel()"
+    (ionClear)="onClear()" [showCancelButton]="true">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      
+    <ion-card *ngFor="let todo of realItems">
+      <ion-item-sliding>
+        <ion-item>
+          <h2>{{todo.Nombre}} {{todo.Apellido}}</h2>
+          <h3>Direccion: {{todo.Direccion}}</h3>
+          <ion-icon name="arrow-dropleft" outline item-end></ion-icon>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button outline item-end (click)="goToHistorial(todo)">
+            <ion-icon name="clock"></ion-icon>
+            Historial
+          </button>
+          <button ion-button outline item-end class="Eliminar" color="secondary" (click)="goToPlanes(todo)">
+            <ion-icon name="add"></ion-icon>
+            Evaluar
+          </button>
+          <button ion-button outline item-end class="Eliminar" color="primary" (click)="goToEditar(todo)">
+            <ion-icon name="create"></ion-icon>
+            Editar
+          </button>
+          <button ion-button outline item-end (click)="deleteTodo(todo)" color="danger">
+            <ion-icon name="trash"></ion-icon>
+            Eliminar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-card>
+  </ion-list>
+</ion-content>

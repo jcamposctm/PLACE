@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Editar Paciente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list class="list-form">
+    <ion-item>
+      <ion-label color="secondary" floating>Nombre(s)</ion-label>
+      <ion-input placeholder="Nombre(s)" (ionBlur)="nombreTouched=true;" (keyup)="nombreKeyup()" [(ngModel)]="paciente.Nombre"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!nombreValido && nombreTouched">
+      <p>
+        Campo Requerido
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label color="secondary" floating>Apellido(s)</ion-label>
+      <ion-input placeholder="Apellido(s)" (ionBlur)="apellidoTouched=true;" (keyup)="apellidoKeyup()" [(ngModel)]="paciente.Apellido"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!apellidoValido && apellidoTouched">
+      <p>
+        Campo Requerido
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label color="secondary" floating>Dirección</ion-label>
+      <ion-input placeholder="Direccion" (ionBlur)="direccionTouched=true;" (keyup)="direccionKeyup()"  [(ngModel)]="paciente.Direccion"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!direccionValido && direccionTouched">
+      <p>
+        Campo Requerido
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label color="secondary" floating>Telefono</ion-label>
+      <ion-input placeholder="Telefono" (ionBlur)="telefonoTouched=true;" type="tel" (keyup)="telefonoKeyup()"  [(ngModel)]="paciente.Telefono"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!telefonoValido && telefonoTouched">
+      <p>
+        Campo Requerido
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-row class="sign-in-button-container">
+      <ion-col text-center>
+        <button ion-button block color="secondary"  (click)="editarPaciente()">
+          Actualizar Información
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-content>

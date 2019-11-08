@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar color="secondary">
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon item-right name="ios-close-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Historial</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngIf="paciente != null">
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="./assets/imgs/ProfilePicture.png">
+            </ion-avatar>
+            <h2>{{paciente.Nombre}}</h2>
+            <p>{{paciente.Direccion}}</p>
+        </ion-item>
+    </ion-card>
+    <ion-list>
+        <ion-card *ngFor="let plan of aggregate" (click)="goToHistorialPaciente(plan)" text-wrap>
+            <ion-item>
+                <h2 class="indicadorTxt">{{plan.Indicador}} <span> <b>(I)</b></span></h2>
+                <p class="resultadoTxt">{{plan.Resultado}} <span><b>(R)</b></span></p>
+                <p> {{plan.Fecha}}</p>
+                <!-- <p [hidden]="true">{{plan._id}}</p> -->
+            </ion-item>
+        </ion-card>
+    </ion-list>
+    <!-- <ion-list>
+    <ion-card *ngFor="let plan of realItems" (click)="alerta(plan._id)" text-wrap>
+     <ion-item>
+       <h2>{{plan.Nombre}}</h2>
+        {{plan.Descripcion}}
+        <p>Versión: {{plan.version}}</p>
+      <p [hidden]="true">{{plan._id}}</p>
+     </ion-item> 
+    </ion-card>
+  </ion-list> -->
+</ion-content>

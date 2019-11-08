@@ -1,0 +1,82 @@
+{
+    "Planes": [
+        {
+            "Nombre": "Atención basica al paciente hospitalizado",
+            "version": "0.1",
+            "Descripcion": "Se  refiere  al  ingreso  de  una  persona  a  una  empresa  institución  de  salud  en  calidad",
+            "Problemas": [
+                {
+                    "Dominio": "11 Seguridad / proteccion",
+                    "Clase": "2 lesión física",
+                    "Etiqueta": "Protección ineficaz",
+                    "Factores": "Proceso infeccioso",
+                    "Caracteristicas": "Cifras de signos vitales",
+                    "Resultado": [
+                        {
+                            "Nombre": "Mantener signos vitales"
+                        },
+                        {
+                            "Nombre": "Respuesta favorable"
+                        }
+                    ],
+                    "Indicador": [
+                        {
+                            "Nombre": "Temperatura corporal"
+                        },
+                        {
+                            "Nombre": "Frecuencia de pulso apical"
+                        },
+                        {
+                            "Nombre": "Frecuencia respiratoria"
+                        }
+                    ],
+                    "escala": [
+                        {
+                            "1": "Desviación grave"
+                        },
+                        {
+                            "2": "Desviación sustancial"
+                        },
+                        {
+                            "3": "Desviacion moderada"
+                        }
+                    ]
+                },
+                {
+                    "Dominio": "4 actividad / reposo",
+                    "Clase": "5 autocuidados",
+                    "Etiqueta": "Deficit de autocuidado",
+                    "Factores": "Disminucion de la tolerancia",
+                    "Caracteristicas": "Incapacidad para la higiene",
+                    "Resultado": [
+                        {
+                            "Nombre": "Realiza autocuidado de baño"
+                        }
+                    ],
+                    "Indicador": [
+                        {
+                            "Nombre": "Se baña en la regadera"
+                        },
+                        {
+                            "Nombre": "Se lava la parte superior del cuerpo"
+                        },
+                        {
+                            "Nombre": "Seca su cuerpo"
+                        }
+                    ],
+                    "Escala": [
+                        {
+                            "1": "Desviación grave"
+                        },
+                        {
+                            "2": "Desviación sustancial"
+                        },
+                        {
+                            "3": "Desviacion moderada"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

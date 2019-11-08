@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Menu Plan</ion-title>
+  </ion-navbar>
+  <ion-searchbar placeholder="Buscar por nombre de Plan" [(ngModel)]="myInput" (ionInput)="onInput($event)" (ionCancel)="onCancel()" (ionClear)="onClear()" [showCancelButton]="true">
+    </ion-searchbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let plan of realItems" (click)="goToEvaluacion(plan)">
+        <ion-item text-wrap>
+          <h2>{{plan.Nombre}}</h2>
+          {{plan.Descripcion}}
+        </ion-item>
+    </ion-card>
+</ion-content>

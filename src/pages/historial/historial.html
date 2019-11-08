@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Historial</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let historial of evaluaciones">
+      <ion-item text-wrap>
+        <h3 style="color: blue">{{historial.resultado}}</h3>
+        <p style="color: green">{{historial.indicador}}</p>
+        <p>Fecha: {{historial.fecha | date : 'short'}}</p>
+        <div>
+          <span>Calificacion</span>
+          <span class="pull-right text-sm" style="color:orange !important;">
+            <!-- <ion-icon name="md-star" color="orange" *ngFor="let start of range(1)"></ion-icon> -->
+            <ion-icon name="md-star" *ngFor="let start of range(historial.valor)"></ion-icon>
+          </span>
+        </div>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

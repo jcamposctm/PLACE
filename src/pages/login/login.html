@@ -1,0 +1,41 @@
+<!-- <ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header> -->
+<ion-content padding>
+    <h3 text-center>Iniciar Sesión</h3>
+    <form [formGroup]="loginForm" (submit)="loguearUsuario()" novalidate>
+        <ion-item>
+            <ion-label color="secondary" stacked>Email</ion-label>
+            <ion-input formControlName="Email" type="Email" placeholder="Email">
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="secondary" stacked>Contrasenia</ion-label>
+            <ion-input placeholder="Contraseña" type="password" formControlName="Password">
+            </ion-input>
+        </ion-item>
+    </form>
+    <ion-row>
+        <ion-col text-center>
+            <button ion-button clear color="primary" (click)="goToReset()" class="txt-registrarse">
+                Olvidaste tu contraseña?
+            </button>
+        </ion-col>
+    </ion-row>
+    <div class="registrarseTxt">
+        <a color="primary" text-center (click)="goToRegistrar()" class="registrarse">Registrarse</a>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-row>
+        <ion-col>
+            <button ion-button color="secondary" (click)="loguearUsuario()" full round>Ingresar</button>
+        </ion-col>
+        <!-- <ion-col>
+            <button ion-button color="primary" (click)="goToRegistrar()" full round>Registrarse</button>
+        </ion-col> -->
+    </ion-row>
+</ion-footer>

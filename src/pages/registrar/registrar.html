@@ -1,0 +1,66 @@
+<!-- <ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Registrar</ion-title>
+    </ion-navbar>
+</ion-header> -->
+
+
+<ion-content padding>
+    <h2 text-center>PLACE</h2>
+    <h4 text-center>Regístrate con nosotros</h4>
+    <form [formGroup]="loginForm" (submit)="crearUsuario()" novalidate>
+        <ion-list>
+            <ion-item>
+                <ion-label color="secondary" floating>Email</ion-label>
+                <ion-input formControlName="Email" type="Email" placeholder="Email" (ionBlur)="emailTouched=true;"></ion-input>
+            </ion-item>
+            <ion-item color="red" class="error-message" *ngIf="!this.loginForm.controls.Email.valid && emailTouched">
+                <p>
+                    Campo Requerido
+                </p>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary" floating>Telefono</ion-label>
+                <ion-input formControlName="Telefono" placeholder="Telefono" (ionBlur)="telefonoTouched=true;" type="tel"></ion-input>
+            </ion-item>
+            <ion-item color="red" class="error-message" *ngIf="!this.loginForm.controls.Telefono.valid && telefonoTouched">
+                <p>
+                    Campo Requerido
+                </p>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label color="secondary" floating>Contraseña</ion-label>
+                <ion-input placeholder="Contraseña" type="password" formControlName="Password" (ionBlur)="passwordTouched=true;"></ion-input>
+            </ion-item>
+            <ion-item color="red" class="error-message" *ngIf="!loginForm.controls.Password.valid && passwordTouched">
+                <p>
+                    Contraseña requerida de 6 carácteres
+                </p>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary" floating>Contraseña</ion-label>
+                <ion-input placeholder="Contraseña" type="password" formControlName="Password2" (ionBlur)="password2Touched=true;" (keyup)="password2Keyup()"></ion-input>
+            </ion-item>
+            <ion-item color="red" class="error-message" *ngIf="!password2Valid && password2Touched">
+                <p>
+                    Las contraseñas no coinciden
+                </p>
+            </ion-item>
+        </ion-list>
+    </form>
+
+
+
+</ion-content>
+
+<ion-footer>
+    <ion-row>
+        <ion-col>
+            <button ion-button color="secondary" (click)="crearUsuario()" full round [disabled]="!validarFormulario()">Registrarse</button>
+        </ion-col>
+        <!-- <ion-col>
+            <button ion-button color="primary" (click)="goToLogin()" full round>Iniciar Sesión</button>
+        </ion-col> -->
+    </ion-row>
+</ion-footer>

@@ -1,0 +1,68 @@
+<ion-header>
+
+    <ion-navbar color="secondary">
+        <ion-title>Agregar Paciente</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <form [formGroup]="loginForm" novalidate>
+        <ion-list class="list-form">
+            <ion-item>
+                <ion-label color="secondary" floating>Nombre(s)</ion-label>
+                <ion-input formControlName="Nombre" placeholder="Nombre(s)" (ionBlur)="nombreTouched=true;"></ion-input>
+            </ion-item>
+            <ion-item class="error-message" *ngIf="!this.loginForm.controls.Nombre.valid && nombreTouched">
+                <p>
+                    Campo Requerido
+                </p>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary" floating>Apellido(s)</ion-label>
+                <ion-input formControlName="Apellido" placeholder="Apellido(s)" (ionBlur)="apellidoTouched=true;"></ion-input>
+            </ion-item>
+            <ion-item class="error-message" *ngIf="!this.loginForm.controls.Apellido.valid && apellidoTouched">
+                <p>
+                    Campo Requerido
+                </p>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary" floating>Direccion</ion-label>
+                <ion-input formControlName="Direccion" placeholder="Direccion" (ionBlur)="direccionTouched=true;"></ion-input>
+            </ion-item>
+            <ion-item class="error-message" *ngIf="!this.loginForm.controls.Direccion.valid && direccionTouched">
+                <p>
+                    Campo Requerido
+                </p>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary" floating>Telefono</ion-label>
+                <ion-input formControlName="Telefono" placeholder="Telefono" (ionBlur)="telefonoTouched=true;" type="tel"></ion-input>
+            </ion-item>
+            <ion-item class="error-message" *ngIf="!this.loginForm.controls.Telefono.valid && telefonoTouched">
+                <p>
+                    Campo Requerido
+                </p>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary" floating>Email</ion-label>
+                <ion-input type="email" formControlName="Email" placeholder="Email"></ion-input>
+            </ion-item>
+            <!-- <ion-item class="error-message" *ngIf="!this.loginForm.controls.Email.valid && emailTouched">
+        <p>
+            Campo Requerido
+        </p>
+    </ion-item> -->
+        </ion-list>
+        <ion-row class="sign-in-button-container">
+            <ion-col text-center>
+                <button ion-button block color="secondary" [disabled]="!loginForm.valid" (click)="agregarPaciente()">
+          Agregar Paciente
+        </button>
+            </ion-col>
+        </ion-row>
+    </form>
+
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-menu [content]="content" id="menu">
+    <!-- <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>{{email}}</ion-title>
+        </ion-toolbar>
+    </ion-header> -->
+    <ion-header no-border>
+        <ion-toolbar class="myBackground" no-padding>
+            <ion-title style="background: white; text-align: center;"> <img src="./assets/imgs/lampara_enfermeria.png" class="logo-size" alt="logo"> </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content text-center>
+        <p class="parrafo">{{email}}</p>
+        <ion-list>
+            <button ion-item menuClose *ngFor="let pagina of paginas" (click)="openPage(pagina)">
+                <ion-icon item-left name="{{ pagina.icon }}"></ion-icon>
+                {{ pagina.titulo }}
+                <!-- <ion-badge color="secondary" item-right *ngIf="page.count">{{ page.count }}</ion-badge> -->
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

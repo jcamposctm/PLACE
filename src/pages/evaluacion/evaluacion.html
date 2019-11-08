@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title> Evaluación</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3 text-center>{{plan.Nombre}}</h3>
+ <ion-card text-wrap class="textCard">
+   <p>Etiqueta: {{plan.Problema.Etiqueta}} </p>
+   <p>Factores: {{plan.Problema.Factores}} </p>
+ </ion-card> 
+  <ion-list>
+    <ion-item>
+      <ion-label color="secondary">Resultado</ion-label>
+      <ion-select [(ngModel)]="resul">
+        <ion-option *ngFor="let resultado of plan.Problema.Resultado; let i = index" (ionSelect)="setIndex($event,i)">
+          {{resultado}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="noResultado" color="primary">Indicador</ion-label>
+      <ion-select *ngIf="resul != null" [(ngModel)]="indi">
+        <ion-option *ngFor="let indicador of plan.Problema.Indicador[posicion]">
+          {{indicador}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-row>
+        <ion-col col-8> -->
+      <ion-range min="1" max="5" [(ngModel)]="valor" color="secondary" pin="true" snaps="true">
+        <ion-label range-left>1</ion-label>
+        <ion-label range-right>5</ion-label>
+      </ion-range>
+      <!-- </ion-col>
+        <ion-col col-2> -->
+      <!-- </ion-col>
+      </ion-row> -->
+    </ion-item>
+      <ion-fab>
+        <button color="secondary" ion-fab mini (click)="showActividades($event)">
+          <ion-icon name="list"></ion-icon>
+        </button>
+      </ion-fab>
+      <ion-fab right>
+        <button color="secondary" ion-fab mini (click)="showEscalas($event)">
+            <ion-icon name="stats"></ion-icon>
+        </button>
+      </ion-fab>
+
+
+  </ion-list>
+
+
+
+  
+</ion-content>
+<ion-footer>
+  <button ion-button full color="secondary" style="bottom:0" round (click)="evaluar()">Evaluar</button>
+</ion-footer>
